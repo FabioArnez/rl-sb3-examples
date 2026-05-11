@@ -1,0 +1,18 @@
+# ── Core RL ──────────────────────────────────────────────────────────────────
+stable-baselines3[extra]>=2.3.0   # includes tensorboard, rich, opencv
+gymnasium>=1.0.0
+gymnasium-robotics>=1.2.0
+
+# ── Environments ─────────────────────────────────────────────────────────────
+highway-env>=1.9.0
+pygame>=2.5.0
+
+# ── Numerics / viz ───────────────────────────────────────────────────────────
+numpy>=1.26.0
+matplotlib>=3.8.0
+
+# ── PyTorch (CPU fallback — swap for GPU build if needed) ────────────────────
+# pip / uv:   torch is pulled automatically by stable-baselines3[extra]
+# miniconda:  install PyTorch first via the pytorch channel for GPU support:
+#               conda install pytorch torchvision -c pytorch
+torch>=2.2.0
