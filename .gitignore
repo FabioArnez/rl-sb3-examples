@@ -1,0 +1,23 @@
+# Trained models and checkpoints
+models/
+highway_dqn/
+
+# Compressed files (SB3 model exports, saved policies)
+*.zip
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
