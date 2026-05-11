@@ -26,29 +26,11 @@ model = SAC(
     gamma=0.95,
     batch_size=256,
     policy_kwargs=dict(net_arch=[256, 256, 256]),
-    device='auto',
+    device='cuda',
 )
 
-model.learn(int(1e5))
+# model.learn(int(1e5))
+model.learn(int(2e5), progress_bar=True)
 # model.learn(int(2e5), progrsbess_bar=True)
 model.save("her_sac_highway")
 
-# Load saved model
-# Because it needs access to `env.compute_reward()`
-# HER must be loaded with the env
-
-# env = gym.make("parking-v0", render_mode="rgb_array") # Change the render mode
-# model = SAC.load("her_sac_highway", env=env)
-
-# obs, info = env.reset()
-
-# # Evaluate the agent
-# episode_reward = 0
-# for _ in range(100):
-#     action, _ = model.predict(obs, deterministic=True)
-#     obs, reward, terminated, truncated, info = env.step(action)
-#     episode_reward += reward
-#     if terminated or truncated or info.get("is_success", False):
-#         print("Reward:", episode_reward, "Success?", info.get("is_success", False))
-#         episode_reward = 0.0
-#         obs, info = env.reset()
