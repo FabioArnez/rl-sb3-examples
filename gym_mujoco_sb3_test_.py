@@ -15,11 +15,11 @@ os.makedirs(log_dir, exist_ok=True)
 def train(env, sb3_algo):
     match sb3_algo:
         case 'SAC':
-            model = SAC('MlpPolicy', env, verbose=1, device='cuda', tensorboard_log=log_dir)
+            model = SAC('MlpPolicy', env, verbose=1, device='auto', tensorboard_log=log_dir)
         case 'TD3':
-            model = TD3('MultiInputPolicy', env, verbose=1, device='cuda', tensorboard_log=log_dir)
+            model = TD3('MultiInputPolicy', env, verbose=1, device='auto', tensorboard_log=log_dir)
         case 'A2C':
-            model = A2C('MlpPolicy', env, verbose=1, device='cuda', tensorboard_log=log_dir)
+            model = A2C('MlpPolicy', env, verbose=1, device='auto', tensorboard_log=log_dir)
         case _:
             print('Algorithm not found')
             return

@@ -15,7 +15,7 @@ model = DQN('MlpPolicy', env,
               target_update_interval=50,
               verbose=1,
               tensorboard_log="highway_dqn/",
-              device='mps',
+              device='auto',
               )
 model.learn(int(2e4), progress_bar=True)
 model.save("highway_dqn/model")

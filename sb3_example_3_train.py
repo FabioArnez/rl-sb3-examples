@@ -26,7 +26,7 @@ model = SAC(
     gamma=0.95,
     batch_size=256,
     policy_kwargs=dict(net_arch=[256, 256, 256]),
-    device='mps',
+    device='auto',
 )
 
 model.learn(int(1e5))
