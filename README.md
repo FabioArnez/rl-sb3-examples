@@ -13,12 +13,14 @@ pip install -r requirements.txt
 
 ### uv
 ```bash
+uv venv --python 3.12
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 uv pip install -r requirements.txt
 ```
 
 ### miniconda
 ```bash
-conda create -n rl-sb3 python=3.11
+conda create -n rl-sb3 python=3.12
 conda activate rl-sb3
 # Optional: install PyTorch with GPU support before the rest
 # conda install pytorch torchvision -c pytorch
