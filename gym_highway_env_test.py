@@ -28,9 +28,9 @@ config = {
     "offscreen_rendering": False
 }
 
-# env = gymnasium.make('highway-v0', render_mode='human')
+env = gymnasium.make('highway-v0', render_mode='human')
 # env = gymnasium.make('highway-v0', render_mode = 'rgb_array', config=config)
-env = gymnasium.make("parking-v0", render_mode = 'rgb_array', config=config)
+# env = gymnasium.make("parking-v0", render_mode = 'human', config=config)
 env.reset()
 for _ in range(15):
     action = env.unwrapped.action_type.actions_indexes["IDLE"]
